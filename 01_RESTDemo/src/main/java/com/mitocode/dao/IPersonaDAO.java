@@ -1,5 +1,5 @@
 package com.mitocode.dao;
 
-public interface IPersonaDAO {
+public interface IPersonaDAO extends {
 
 }
