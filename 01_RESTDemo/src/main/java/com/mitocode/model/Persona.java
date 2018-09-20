@@ -1,10 +1,24 @@
 package com.mitocode.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name= "tb_Persona")
 public class Persona {
- 
+	
+	@Id
 	private int idPersona;
+	
+	@Column(name= "nombres")
 	private String nombres;
+	
+	@Column(name= "apellidos")
 	private String apellidos;
+	
+	@Column(name= "edad")
 	private int edad;
 	
 	public Persona() {
