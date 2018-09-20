@@ -15,8 +15,8 @@ public interface IPersonaService {
 	
 	void registrar (Persona per);
 	void modificar (Persona per);
-	void eliminar (Persona per);
+	void eliminar (Integer per);
 	List<Persona> listar();
-	Persona listar(int id);
+	Persona listar(Integer id);
 }
 
