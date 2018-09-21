@@ -1,7 +1,6 @@
 package com.mitocode.service;
 
 import java.util.List;
-
 import com.mitocode.model.Persona;
 
 public interface IPersonaService {
@@ -11,8 +10,7 @@ public interface IPersonaService {
 	 una interface = heredar otra interface 
 	 
 	 */
-	 
-	
+	 	
 	void registrar (Persona per);
 	void modificar (Persona per);
 	void eliminar (Integer id);
