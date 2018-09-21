@@ -1,9 +1,7 @@
 package com.mitocode.controller;
 
-
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -29,7 +27,11 @@ import com.mitocode.service.IPersonaService;
 @RestController
 @RequestMapping("/persona")
 public class PersonaController {
-
+	
+	
+	/**
+	@Autowired: debes agregarla para que el objeto "service" se reconocido como servico
+	*/
 	@Autowired
 	private IPersonaService service;
 
@@ -62,7 +64,6 @@ public class PersonaController {
 		/**
 		@RequestBody: indicar que la clase Persona sera de typo JSON
 		*/
-		
 		int resultado= 0;
 		try {
 			service.registrar(persona);
@@ -89,7 +90,7 @@ public class PersonaController {
 		
 	}
 	
-	@DeleteMapping(value= "/eliminar/{1}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@DeleteMapping(value= "/eliminar/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Integer> eliminar (@PathVariable Integer id){
 		/**
 		 /{1}         : Captura el atributo "id" en la url de la peticion
