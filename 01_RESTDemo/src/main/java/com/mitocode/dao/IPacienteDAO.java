@@ -5,7 +5,8 @@ import com.mitocode.model.Paciente;
 
 
 public interface IPacienteDAO extends JpaRepository<Paciente, Integer>{
- /**
+ 
+  /**
   extends JpaRepository<Paciente, Integer>: indica los medotos CRUD 
   * */
 	
