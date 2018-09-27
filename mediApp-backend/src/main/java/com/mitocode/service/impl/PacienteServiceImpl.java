@@ -1,4 +1,4 @@
-package com.mitocode.service;
+package com.mitocode.service.impl;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.mitocode.dao.IPacienteDao;
 import com.mitocode.model.Paciente;
+import com.mitocode.service.IPacienteService;
 
 @Service
 public class PacienteServiceImpl implements IPacienteService{

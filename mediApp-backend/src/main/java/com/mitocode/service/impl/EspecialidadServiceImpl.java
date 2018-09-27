@@ -1,4 +1,4 @@
-package com.mitocode.service;
+package com.mitocode.service.impl;
 
 import java.util.List;
 
@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.mitocode.dao.IEspecialidadDao;
 import com.mitocode.model.Especialidad;
+import com.mitocode.service.IEspecialidadService;
 
 @Service
 public class EspecialidadServiceImpl implements IEspecialidadService{

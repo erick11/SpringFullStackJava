@@ -1,4 +1,4 @@
-package com.mitocode.service;
+package com.mitocode.service.impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.mitocode.dao.IMedicoDao;
 import com.mitocode.model.Medico;
+import com.mitocode.service.IMedicoService;
 
 
 /**
@@ -22,9 +23,9 @@ public class MedicoServiceImpl implements IMedicoService{
 	private IMedicoDao dao;
 	
 	@Override
-	public void registrar(Medico med) {
-		dao.save(med);
-		
+	public Medico registrar(Medico med) {
+		System.out.println(med.toString());
+		return dao.save(med);		
 	}
 
 	@Override
