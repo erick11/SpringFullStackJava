@@ -14,8 +14,6 @@ public class PacienteServiceImpl implements IPacienteService{
 	@Autowired
 	private IPacienteDAO pacienteDao;
 
-	
-	
 	@Override
 	public void registrar(Paciente pac) {
 		
@@ -46,7 +44,5 @@ public class PacienteServiceImpl implements IPacienteService{
 		
 		return pacienteDao.findOne(id);
 	}
-	
-	
 	
 }
