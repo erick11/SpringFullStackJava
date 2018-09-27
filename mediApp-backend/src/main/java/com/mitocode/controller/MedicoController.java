@@ -45,19 +45,21 @@ public class MedicoController {
 	 @PostMapping: para realizar registros
 	 * */
 	@PostMapping(value = "/registrar", consumes = MediaType.APPLICATION_JSON_VALUE, produces= MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Integer> registrar(@RequestBody Medico medico){
+	public ResponseEntity<Medico> registrar(@RequestBody Medico medico){
 		/**
 		@RequestBody: indicar que la clase Persona sera de typo JSON
 		*/
+		
+		Medico resMedico = new Medico(); 
 		int resultado= 0;
 		try {
-			service.registrar(medico);
+			resMedico =service.registrar(medico);
 			resultado = 1;
 		} catch (Exception e) {
 			new ResponseEntity<>(resultado, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
-		return new ResponseEntity<Integer>(resultado, HttpStatus.OK);
+		return new ResponseEntity<Medico>(resMedico, HttpStatus.OK);
 	}
 	
 	/**

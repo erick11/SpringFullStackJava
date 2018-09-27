@@ -5,7 +5,7 @@ import com.mitocode.model.Medico;
 
 public interface IMedicoService {
 
-	void registrar (Medico med);
+	Medico registrar (Medico med);
 	void modificar (Medico med);
 	void eliminar (Integer cod);
 	List<Medico> listar();
