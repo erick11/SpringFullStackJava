@@ -3,8 +3,10 @@ package com.mitocode.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity(name="tb_Medico")
+@Entity
+@Table(name="tb_Medico")
 public class Medico {
 
 	@Id
