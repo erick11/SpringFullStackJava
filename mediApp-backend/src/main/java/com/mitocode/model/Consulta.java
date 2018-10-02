@@ -1,21 +1,56 @@
 package com.mitocode.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
-@Entity
-@Table(name="tb_Consulta")
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+
+@Entity(name="tb_Consulta")
 public class Consulta {
 	
 	@Id
 	private Integer idConsulta;
 	
+	
+	/**
+	 @JsonSerialize: debes agregar 2 convertores ==> Clases Utilitarias
+	*/
 	@Column(name="fecha")
+	@JsonSerialize(using = ToStringSerializer.class)
 	private LocalDate fecha;
+	
+	
+	@ManyToOne
+	@JoinColumn(name="id_paciente", nullable = false)
+	Paciente paciente;
+	 
+	@ManyToOne
+	@JoinColumn(name="id_especialidad", nullable = false)
+	Especialidad especialidad;
+	
+	@ManyToOne
+	@JoinColumn(name="id_medico", nullable = false)
+	Medico medico;
+	
+	/**
+	CascadeType.PERSIST: Permite CRUD
+	LAZY: te permite rendimiento de tus consultas
+	orphanRemoval: Algunas veces se necesita elimnar elementos de la lista
+	*/	
+	@OneToMany(mappedBy= "consult", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE }
+	           ,fetch = FetchType.LAZY, orphanRemoval = true)
+	private List<DetalleConsulta>  detalleConsultas;
+
 	
 	public Consulta() {
 		
@@ -35,43 +70,35 @@ public class Consulta {
 		this.fecha = fecha;
 	}
 
-	@Override
-	public String toString() {
-		return "Consulta [idConsulta=" + idConsulta + ", fecha=" + fecha + "]";
+	public Paciente getPaciente() {
+		return paciente;
 	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((fecha == null) ? 0 : fecha.hashCode());
-		result = prime * result + ((idConsulta == null) ? 0 : idConsulta.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Consulta other = (Consulta) obj;
-		if (fecha == null) {
-			if (other.fecha != null)
-				return false;
-		} else if (!fecha.equals(other.fecha))
-			return false;
-		if (idConsulta == null) {
-			if (other.idConsulta != null)
-				return false;
-		} else if (!idConsulta.equals(other.idConsulta))
-			return false;
-		return true;
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
 	}
 	
-	
+	public Especialidad getEspecialidad() {
+		return especialidad;
+	}
+	public void setEspecialidad(Especialidad especialidad) {
+		this.especialidad = especialidad;
+	}
+
+	public Medico getMedico() {
+		return medico;
+	}
+	public void setMedico(Medico medico) {
+		this.medico = medico;
+	}
+
+	public List<DetalleConsulta> getDetalleConsultas() {
+		return detalleConsultas;
+	}
+	public void setDetalleConsultas(List<DetalleConsulta> detalleConsultas) {
+		this.detalleConsultas = detalleConsultas;
+	}
+
+		
 	
 }
 
