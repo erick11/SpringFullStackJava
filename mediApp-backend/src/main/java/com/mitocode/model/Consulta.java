@@ -21,12 +21,11 @@ public class Consulta {
 	@Id
 	private Integer idConsulta;
 	
-	
 	/**
 	 @JsonSerialize: debes agregar 2 convertores ==> Clases Utilitarias
 	*/
-	@Column(name="fecha")
 	@JsonSerialize(using = ToStringSerializer.class)
+	@Column(name="fecha")	
 	private LocalDate fecha;
 	
 	
@@ -46,8 +45,10 @@ public class Consulta {
 	CascadeType.PERSIST: Permite CRUD
 	LAZY: te permite rendimiento de tus consultas
 	orphanRemoval: Algunas veces se necesita elimnar elementos de la lista
+	mappedBy= "tb_Consulta" : Debe ir el nombre de la tabla
+	
 	*/	
-	@OneToMany(mappedBy= "consult", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE }
+	@OneToMany(mappedBy= "tb_Consulta", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE }
 	           ,fetch = FetchType.LAZY, orphanRemoval = true)
 	private List<DetalleConsulta>  detalleConsultas;
 
