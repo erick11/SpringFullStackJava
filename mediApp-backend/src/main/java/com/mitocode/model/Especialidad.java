@@ -10,23 +10,34 @@ import javax.persistence.Table;
 public class Especialidad {
 
 	@Id
-	private Integer idConsulta;
+	private Integer idEspecialidad;
 	
 	@Column(name="")
 	private String nombre;
-	
 	
 	public Especialidad() {
 		
 	}
 
-	public Especialidad(Integer idConsulta, String nombre) {
+	public Especialidad(Integer idEspecialidad, String nombre) {
 		super();
-		this.idConsulta = idConsulta;
+		this.idEspecialidad = idEspecialidad;
 		this.nombre = nombre;
 	}
 
-	
-	
+	public Integer getIdEspecialidad() {
+		return idEspecialidad;
+	}
+	public void setIdEspecialidad(Integer idEspecialidad) {
+		this.idEspecialidad = idEspecialidad;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
 	
 }
