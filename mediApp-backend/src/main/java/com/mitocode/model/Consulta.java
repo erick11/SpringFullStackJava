@@ -45,10 +45,11 @@ public class Consulta {
 	CascadeType.PERSIST: Permite CRUD
 	LAZY: te permite rendimiento de tus consultas
 	orphanRemoval: Algunas veces se necesita elimnar elementos de la lista
-	mappedBy= "tb_Consulta" : Debe ir el nombre de la tabla
+	mappedBy= "consulta" : Debe ir el nombre de la variable que hace referencia a la Clase
+						   Esta variable esta en la clase DetalleConsulta
 	
 	*/	
-	@OneToMany(mappedBy= "tb_Consulta", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE }
+	@OneToMany(mappedBy= "consulta", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE }
 	           ,fetch = FetchType.LAZY, orphanRemoval = true)
 	private List<DetalleConsulta>  detalleConsultas;
 
