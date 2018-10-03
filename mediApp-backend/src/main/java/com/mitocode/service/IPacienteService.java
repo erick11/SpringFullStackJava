@@ -6,8 +6,8 @@ import com.mitocode.model.Paciente;
 
 public interface IPacienteService {
 	
-	void registrar (Paciente pac);
-	void actualizar (Paciente pac);
+	Paciente registrar (Paciente pac);
+	void modificar (Paciente pac);
 	void eliminar (Integer cod);
 	List<Paciente> listar();
 	Paciente listar(Integer cod);

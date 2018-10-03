@@ -9,6 +9,10 @@ import com.mitocode.dao.IPacienteDao;
 import com.mitocode.model.Paciente;
 import com.mitocode.service.IPacienteService;
 
+
+/**
+@Service = serive para indicar los servicos para la anotacion @Autowired	
+*/
 @Service
 public class PacienteServiceImpl implements IPacienteService{
 
@@ -16,13 +20,12 @@ public class PacienteServiceImpl implements IPacienteService{
 	private IPacienteDao dao;
 	
 	@Override
-	public void registrar(Paciente pac) {
-		dao.save(pac);
-		
+	public Paciente registrar (Paciente pac) {
+		 return dao.save(pac);		
 	}
 
 	@Override
-	public void actualizar(Paciente pac) {
+	public void modificar(Paciente pac) {
 		dao.save(pac);
 		
 	}
