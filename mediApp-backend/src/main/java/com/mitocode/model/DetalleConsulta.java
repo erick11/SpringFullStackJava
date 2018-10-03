@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class DetalleConsulta {
 		
 	@Id
-	private Integer idDetalle;
+	private Integer idDetalleConsulta;
 	
 	/**
 	@JsonIgnore: Es para evitar la redundancia ciclica
@@ -34,18 +34,18 @@ public class DetalleConsulta {
 		
 	}
 	
-	public DetalleConsulta(Integer idDetalle, Consulta consulta, String diagnostico, String tratamiento) {
-		this.idDetalle = idDetalle;
+	public DetalleConsulta(Integer idDetalleConsulta, Consulta consulta, String diagnostico, String tratamiento) {
+		this.idDetalleConsulta = idDetalleConsulta;
 		this.consulta = consulta;
 		this.diagnostico = diagnostico;
 		this.tratamiento = tratamiento;
 	}
 
 	public Integer getIdDetalle() {
-		return idDetalle;
+		return idDetalleConsulta;
 	}
-	public void setIdDetalle(Integer idDetalle) {
-		this.idDetalle = idDetalle;
+	public void setIdDetalle(Integer idDetalleConsulta) {
+		this.idDetalleConsulta = idDetalleConsulta;
 	}
 
 	public Consulta getConsulta() {
