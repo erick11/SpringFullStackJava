@@ -7,13 +7,19 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Table(name="tb_Consulta")
+@Table(name="tb_Detalleconsulta")
 public class DetalleConsulta {
 		
 	@Id
 	private Integer idDetalle;
 	
+	/**
+	@JsonIgnore: Es para evitar la redundancia ciclica
+	*/
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name= "id_consulta", nullable = false)
 	private Consulta consulta;
