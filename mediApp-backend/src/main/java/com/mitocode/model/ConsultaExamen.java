@@ -10,83 +10,47 @@ import javax.persistence.Table;
 public class ConsultaExamen {
 	
 	@Id
-	private Integer idConsulta;
-	@Column(name="")
 	private Integer idExamen;
+	
+	@Column(name="nombre", nullable= false, length= 70)
+	private String nombre;
+	
+	@Column(name="descripcion", nullable= false, length= 70)
+	private String descripcion; 
 	
 	public ConsultaExamen() {
 		
 	}
 	
-	
-	public ConsultaExamen(Integer idConsulta, Integer idExamen) {
-		
-		this.idConsulta = idConsulta;
+	public ConsultaExamen(Integer idExamen, String nombre, String descripcion) {
+		super();
 		this.idExamen = idExamen;
-	}
-
-	public Integer getIdConsulta() {
-		return idConsulta;
-	}
-	public void setIdConsulta(Integer idConsulta) {
-		this.idConsulta = idConsulta;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
 	}
 
 	public Integer getIdExamen() {
 		return idExamen;
 	}
-
-
 	public void setIdExamen(Integer idExamen) {
 		this.idExamen = idExamen;
 	}
 
-
-	
-	@Override
-	public String toString() {
-		return "ConsultaExamen [idConsulta=" + idConsulta + ", idExamen=" + idExamen + "]";
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((idConsulta == null) ? 0 : idConsulta.hashCode());
-		result = prime * result + ((idExamen == null) ? 0 : idExamen.hashCode());
-		return result;
+	public String getDescripcion() {
+		return descripcion;
 	}
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ConsultaExamen other = (ConsultaExamen) obj;
-		if (idConsulta == null) {
-			if (other.idConsulta != null)
-				return false;
-		} else if (!idConsulta.equals(other.idConsulta))
-			return false;
-		if (idExamen == null) {
-			if (other.idExamen != null)
-				return false;
-		} else if (!idExamen.equals(other.idExamen))
-			return false;
-		return true;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
-
 	
 	
-
-	
-	
-
-
+		
 	
 }
