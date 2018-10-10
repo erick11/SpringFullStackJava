@@ -52,7 +52,10 @@ public class Consulta {
 	@OneToMany(mappedBy= "consulta", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE }
 	           ,fetch = FetchType.LAZY, orphanRemoval = true)
 	private List<DetalleConsulta>  detalleConsultas;
-
+	
+	
+	
+	
 	
 	public Consulta() {
 		
