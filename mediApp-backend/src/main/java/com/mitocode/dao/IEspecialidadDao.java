@@ -11,5 +11,8 @@ import com.mitocode.model.Especialidad;
 
 @Repository
 public interface IEspecialidadDao extends JpaRepository<Especialidad, Integer>{
-
+	
+	/**
+	 * JpaRepository<Medico, Integer>: agrega los metodos CRUD 
+	 */
 }
