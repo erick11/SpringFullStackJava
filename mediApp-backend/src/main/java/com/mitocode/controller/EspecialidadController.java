@@ -21,7 +21,7 @@ import com.mitocode.model.Medico;
 import com.mitocode.service.IEspecialidadService;
 
 @RestController
-@RequestMapping("/medico")
+@RequestMapping("/especialida")
 public class EspecialidadController {
 	
 	@Autowired
