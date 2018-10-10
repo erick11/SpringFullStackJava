@@ -14,8 +14,9 @@ public class EspecialidadServiceImpl implements IEspecialidadService{
 	private IEspecialidadDao dao;
 
 	@Override
-	public void registrar(Especialidad especialidad) {
-		dao.save(especialidad);
+	public Especialidad registrar(Especialidad especialidad) {
+		
+		return 	dao.save(especialidad);
 		
 	}
 
@@ -25,8 +26,8 @@ public class EspecialidadServiceImpl implements IEspecialidadService{
 	}
 
 	@Override
-	public void eliminar(Especialidad especialidad) {
-		dao.delete(especialidad);		
+	public void eliminar(Integer cod) {
+		dao.deleteById(cod);		
 	}
 
 	@Override

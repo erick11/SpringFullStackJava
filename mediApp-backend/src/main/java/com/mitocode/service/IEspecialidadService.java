@@ -6,9 +6,9 @@ import com.mitocode.model.Especialidad;
 
 public interface IEspecialidadService {
 
-	void registrar(Especialidad especialidad);
+	Especialidad registrar(Especialidad especialidad);
 	void modificar(Especialidad especialidad);
-	void eliminar(Especialidad especialidad);
+	void eliminar(Integer cod);
 	
 	List<Especialidad> listar();
 	Especialidad listar(Integer codigo);
