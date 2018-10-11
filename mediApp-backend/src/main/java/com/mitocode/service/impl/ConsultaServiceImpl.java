@@ -19,6 +19,9 @@ public class ConsultaServiceImpl implements IConsultaService{
 
 	@Override
 	public Consulta registrar(Consulta consulta) {		
+		System.out.println("Hola consulta: " + consulta.toString());
+		
+		consulta.getDetalleConsultas().forEach(x->{x.setConsulta(consulta);});
 		return dao.save(consulta);
 	}
 
