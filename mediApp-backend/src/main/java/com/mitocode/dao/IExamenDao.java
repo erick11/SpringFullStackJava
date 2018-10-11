@@ -11,5 +11,8 @@ import com.mitocode.model.Examen;
 
 @Repository
 public interface IExamenDao extends JpaRepository<Examen, Integer>{
-
+	
+	/**
+	 * JpaRepository<Medico, Integer>: agrega los metodos CRUD 
+	 */
 }
