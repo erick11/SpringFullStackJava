@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mitocode.dao.IConsultaDao;
-import com.mitocode.dao.IEspecialidadDao;
 import com.mitocode.model.Consulta;
 import com.mitocode.service.IConsultaService;
-import com.mitocode.service.IEspecialidadService;
+
 
 @Service
 public class ConsultaServiceImpl implements IConsultaService{
 
+	
 	@Autowired
 	private IConsultaDao dao;
 
