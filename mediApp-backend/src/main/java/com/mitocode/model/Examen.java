@@ -50,7 +50,6 @@ public class Examen {
 		this.descripcion = descripcion;
 	}
 
-	
 	@Override
 	public String toString() {
 		return "Examen [idExamen=" + idExamen + ", nombres=" + nombres + ", descripcion=" + descripcion + "]";
@@ -92,8 +91,5 @@ public class Examen {
 			return false;
 		return true;
 	}
-	
-	
-	
-	
+		
 }
