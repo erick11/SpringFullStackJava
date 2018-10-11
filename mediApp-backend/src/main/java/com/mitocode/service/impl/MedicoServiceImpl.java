@@ -58,9 +58,5 @@ public class MedicoServiceImpl implements IMedicoService{
 
 		return dao.findById(cod).get();
 	}
-
-	
-
-	
 	
 }
