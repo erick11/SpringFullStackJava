@@ -69,6 +69,12 @@ public class DetalleConsulta {
 		this.tratamiento = tratamiento;
 	}
 
+	@Override
+	public String toString() {
+		return "DetalleConsulta [idDetalleConsulta=" + idDetalleConsulta + ", consulta=" + consulta + ", diagnostico="
+				+ diagnostico + ", tratamiento=" + tratamiento + "]";
+	}
+
 		
 	
 	
