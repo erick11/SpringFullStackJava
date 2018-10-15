@@ -9,9 +9,15 @@ import com.mitocode.dao.IExamenDao;
 import com.mitocode.model.Examen;
 import com.mitocode.service.IExamenService;
 
+/**
+@Service = serive para indicar los servicos para la anotacion @Autowired	
+*/
 @Service
 public class ExamenServiceImpl implements IExamenService{
 
+	/**
+	@Autowired: anotacion obligatoria
+	 * */
 	@Autowired
 	private IExamenDao dao;
 	

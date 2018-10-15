@@ -8,11 +8,17 @@ import com.mitocode.dao.IEspecialidadDao;
 import com.mitocode.model.Especialidad;
 import com.mitocode.service.IEspecialidadService;
 
+/**
+@Service = serive para indicar los servicos para la anotacion @Autowired	
+*/
 @Service
 public class EspecialidadServiceImpl implements IEspecialidadService{
 
 	private IEspecialidadDao dao;
 
+	/**
+	@Autowired: anotacion obligatoria
+	 * */
 	@Override
 	public void registrar(Especialidad especialidad) {
 		dao.save(especialidad);

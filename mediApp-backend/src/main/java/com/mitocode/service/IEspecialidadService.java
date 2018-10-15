@@ -11,6 +11,6 @@ public interface IEspecialidadService {
 	void eliminar(Especialidad especialidad);
 	
 	List<Especialidad> listar();
-	Especialidad listar(Integer codigo);
-	
+	Especialidad listar(Integer codigo);	
+
 }

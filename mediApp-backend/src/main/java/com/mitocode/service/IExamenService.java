@@ -9,6 +9,8 @@ public interface IExamenService {
 	void registrar (Examen exam); 
 	void modificar (Examen exam);
 	void eliminar (Examen exam);
+	
 	List<Examen> listar();
 	Examen listar(Integer cod);
+
 }

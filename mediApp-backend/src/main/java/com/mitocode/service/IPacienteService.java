@@ -9,6 +9,7 @@ public interface IPacienteService {
 	Paciente registrar (Paciente pac);
 	void modificar (Paciente pac);
 	void eliminar (Integer cod);
+	
 	List<Paciente> listar();
 	Paciente listar(Integer cod);
 	
