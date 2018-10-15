@@ -65,12 +65,11 @@ public class EspecialidadController {
 		*/
 		
 		Especialidad resEspecialidad = new Especialidad(); 
-		int resultado= 0;
 		try {
 			resEspecialidad =service.registrar(especialidad);
 			
 		} catch (Exception e) {
-			new ResponseEntity<>(resultado, HttpStatus.INTERNAL_SERVER_ERROR);
+			new ResponseEntity<>(resEspecialidad, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
 		return new ResponseEntity<Especialidad>(resEspecialidad, HttpStatus.OK);

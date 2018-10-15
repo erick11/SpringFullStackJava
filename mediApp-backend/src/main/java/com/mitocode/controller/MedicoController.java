@@ -66,12 +66,12 @@ public class MedicoController {
 		*/
 		
 		Medico resMedico = new Medico(); 
-		int resultado= 0;
+		
 		try {
 			resMedico =service.registrar(medico);
-			resultado = 1;
+			
 		} catch (Exception e) {
-			new ResponseEntity<>(resultado, HttpStatus.INTERNAL_SERVER_ERROR);
+			new ResponseEntity<>(resMedico, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
 		return new ResponseEntity<Medico>(resMedico, HttpStatus.OK);
