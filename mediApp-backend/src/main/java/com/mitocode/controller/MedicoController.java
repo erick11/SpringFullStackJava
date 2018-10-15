@@ -27,7 +27,8 @@ public class MedicoController {
 	@Autowired
 	private IMedicoService service;
 	
-	/**@GetMapping: para servico get */
+	/**
+	@GetMapping: para servico get */
 	@GetMapping(value= "/listar", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Medico>> listar(){
 		List<Medico> medicos = new ArrayList<>();
@@ -41,8 +42,22 @@ public class MedicoController {
 		return new ResponseEntity<List<Medico>>(medicos, HttpStatus.OK);
 	}
 	
+	@GetMapping(value= "/listar/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Medico> listarId(@PathVariable ("id") Integer id) {
+		Medico medico = new Medico(); 
+		
+		try {
+			medico = service.listar(id);
+		} catch (Exception e) {
+			new ResponseEntity<String>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+			//new ResponseEntity<String>("Error 14", HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return new ResponseEntity<Medico>(medico, HttpStatus.OK);
+	}
+	
 	/**
-	 @PostMapping: para realizar registros
+	@PostMapping: para realizar registros
 	 * */
 	@PostMapping(value = "/registrar", consumes = MediaType.APPLICATION_JSON_VALUE, produces= MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Medico> registrar(@RequestBody Medico medico){
@@ -80,6 +95,9 @@ public class MedicoController {
 		
 	}
 	
+	/**
+	@DeleteMapping: Elimnar registros
+	*/
 	@DeleteMapping(value= "/eliminar/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Integer> eliminar (@PathVariable Integer id){
 		/**
@@ -99,17 +117,5 @@ public class MedicoController {
 		return  new ResponseEntity<Integer>(resultado, HttpStatus.OK);	
 	}
 	
-	@GetMapping(value= "/listar/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Medico> listarId(@PathVariable ("id") Integer id) {
-		Medico medico = new Medico(); 
-		
-		try {
-			medico = service.listar(id);
-		} catch (Exception e) {
-			new ResponseEntity<String>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-			//new ResponseEntity<String>("Error 14", HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-		
-		return new ResponseEntity<Medico>(medico, HttpStatus.OK);
-	}
+	
 }

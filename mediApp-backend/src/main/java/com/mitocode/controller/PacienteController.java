@@ -30,7 +30,8 @@ public class PacienteController {
 	@Autowired
 	private IPacienteService service; 
 	
-	/**@GetMapping: para servico get */
+	/**
+	@GetMapping: para servico get */
 	@GetMapping(value= "/listar", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Paciente>> listar(){
 		List<Paciente> pacientes = new ArrayList<>();
@@ -59,7 +60,7 @@ public class PacienteController {
 	}
 	
 	/**
-	 @PostMapping: para realizar registros
+	@PostMapping: para realizar registros
 	 * */
 	@PostMapping(value = "/registrar", consumes = MediaType.APPLICATION_JSON_VALUE, produces= MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Paciente> registrar(@RequestBody Paciente paciente){
@@ -119,6 +120,4 @@ public class PacienteController {
 		return  new ResponseEntity<Integer>(resultado, HttpStatus.OK);	
 	}
 
-	
-	
 }
