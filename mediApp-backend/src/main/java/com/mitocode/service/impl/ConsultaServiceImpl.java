@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.mitocode.dao.IConsultaDao;
 import com.mitocode.model.Consulta;
+import com.mitocode.model.DetalleConsulta;
 import com.mitocode.service.IConsultaService;
 
 
@@ -18,7 +19,14 @@ public class ConsultaServiceImpl implements IConsultaService{
 
 	@Override
 	public Consulta registrar(Consulta consulta) {				
+		
+//		for (DetalleConsulta det : consulta.getDetalleConsultas()) {
+//			det.setConsulta(consulta);
+//		} 		
+		
 		consulta.getDetalleConsultas().forEach(x->{x.setConsulta(consulta);});
+		
+		
 		return dao.save(consulta);
 	}
 
