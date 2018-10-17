@@ -7,7 +7,7 @@ import com.mitocode.model.Especialidad;
 
 /**
  @Repository: Para indicar que es un origen de datos 
- **/
+**/
 
 @Repository
 public interface IEspecialidadDao extends JpaRepository<Especialidad, Integer>{

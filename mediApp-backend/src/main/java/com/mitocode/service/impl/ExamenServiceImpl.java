@@ -22,8 +22,8 @@ public class ExamenServiceImpl implements IExamenService{
 	private IExamenDao dao;
 	
 	@Override
-	public void registrar(Examen exam) {
-		dao.save(exam);
+	public Examen registrar(Examen exam) {
+		return dao.save(exam);
 	}
 
 	@Override
@@ -33,8 +33,8 @@ public class ExamenServiceImpl implements IExamenService{
 	}
 
 	@Override
-	public void eliminar(Examen exam) {
-		dao.delete(exam);
+	public void eliminar(Integer cod) {
+		dao.deleteById(cod);
 		
 	}
 

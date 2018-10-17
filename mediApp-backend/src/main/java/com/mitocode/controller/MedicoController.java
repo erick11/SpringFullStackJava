@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mitocode.model.Medico;
-import com.mitocode.model.Paciente;
 import com.mitocode.service.IMedicoService;
 
 @RestController

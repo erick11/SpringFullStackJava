@@ -16,6 +16,10 @@ import com.mitocode.service.IPacienteService;
 @Service
 public class PacienteServiceImpl implements IPacienteService{
 
+	
+	/**
+	@Autowired: anotacion obligatoria
+	 * */
 	@Autowired
 	private IPacienteDao dao;
 	

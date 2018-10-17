@@ -13,7 +13,10 @@ import com.mitocode.service.IConsultaService;
 
 @Service
 public class ConsultaServiceImpl implements IConsultaService{
-
+	
+	/**
+	@Autowired: anotacion obligatoria
+	 * */
 	@Autowired
 	private IConsultaDao dao;
 

@@ -6,9 +6,9 @@ import com.mitocode.model.Examen;
 
 public interface IExamenService {
 	
-	void registrar (Examen exam); 
+	Examen registrar (Examen exam); 
 	void modificar (Examen exam);
-	void eliminar (Examen exam);
+	void eliminar (Integer cod);
 	
 	List<Examen> listar();
 	Examen listar(Integer cod);
