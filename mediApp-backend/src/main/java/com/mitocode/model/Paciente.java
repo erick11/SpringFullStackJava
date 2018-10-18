@@ -13,7 +13,7 @@ public class Paciente {
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	private Integer idPacinete;
+	private Integer idPaciente;
 	
 	@Column(name="nombres", nullable= false, length= 50)
 	private String nombres;
@@ -37,8 +37,8 @@ public class Paciente {
 		
 	}
 
-	public Paciente(Integer idPacinete, String nombres, String apellidos, String dni, String direccion, String telefono, String email) {
-		this.idPacinete = idPacinete;
+	public Paciente(Integer idPaciente, String nombres, String apellidos, String dni, String direccion, String telefono, String email) {
+		this.idPaciente = idPaciente;
 		this.nombres = nombres;
 		this.apellidos = apellidos;
 		this.dni = dni;
@@ -48,10 +48,10 @@ public class Paciente {
 	}
 
 	public Integer getIdPacinete() {
-		return idPacinete;
+		return idPaciente;
 	}
-	public void setIdPacinete(Integer idPacinete) {
-		this.idPacinete = idPacinete;
+	public void setIdPacinete(Integer idPaciente) {
+		this.idPaciente = idPaciente;
 	}
 
 	public String getNombres() {
@@ -99,7 +99,7 @@ public class Paciente {
 	
 	@Override
 	public String toString() {
-		return "Paciente [idPacinete=" + idPacinete + ", nombres=" + nombres + ", apellidos=" + apellidos + ", dni="
+		return "Paciente [idPacinete=" + idPaciente + ", nombres=" + nombres + ", apellidos=" + apellidos + ", dni="
 				+ dni + ", direccion=" + direccion + ", telefono=" + telefono + ", email=" + email + "]";
 	}
 
@@ -111,7 +111,7 @@ public class Paciente {
 		result = prime * result + ((direccion == null) ? 0 : direccion.hashCode());
 		result = prime * result + ((dni == null) ? 0 : dni.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((idPacinete == null) ? 0 : idPacinete.hashCode());
+		result = prime * result + ((idPaciente == null) ? 0 : idPaciente.hashCode());
 		result = prime * result + ((nombres == null) ? 0 : nombres.hashCode());
 		result = prime * result + ((telefono == null) ? 0 : telefono.hashCode());
 		return result;
@@ -146,10 +146,10 @@ public class Paciente {
 				return false;
 		} else if (!email.equals(other.email))
 			return false;
-		if (idPacinete == null) {
-			if (other.idPacinete != null)
+		if (idPaciente == null) {
+			if (other.idPaciente != null)
 				return false;
-		} else if (!idPacinete.equals(other.idPacinete))
+		} else if (!idPaciente.equals(other.idPaciente))
 			return false;
 		if (nombres == null) {
 			if (other.nombres != null)
