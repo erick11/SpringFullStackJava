@@ -100,6 +100,13 @@ public class Consulta {
 	public void setDetalleConsultas(List<DetalleConsulta> detalleConsultas) {
 		this.detalleConsultas = detalleConsultas;
 	}
+
 	
+	@Override
+	public String toString() {
+		return "Consulta [idConsulta=" + idConsulta + ", fecha=" + fecha + ", paciente=" + paciente + ", especialidad="
+				+ especialidad + ", medico=" + medico + ", detalleConsultas=" + detalleConsultas + "]";
+	}
+		
 }
 

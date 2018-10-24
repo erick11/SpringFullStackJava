@@ -1,56 +1,45 @@
 package com.mitocode.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
 
 @Entity
+@IdClass(ConsultaExamenPK.class)
 @Table(name="tb_ConsultaExamen")
 public class ConsultaExamen {
 	
 	@Id
-	private Integer idExamen;
+	private Examen examen;
 	
-	@Column(name="nombre", nullable= false, length= 70)
-	private String nombre;
-	
-	@Column(name="descripcion", nullable= false, length= 70)
-	private String descripcion; 
-	
+	@Id
+	private Consulta consulta;
+
 	public ConsultaExamen() {
 		
 	}
-	
-	public ConsultaExamen(Integer idExamen, String nombre, String descripcion) {
+
+	public ConsultaExamen(Examen examen, Consulta consulta) {
 		super();
-		this.idExamen = idExamen;
-		this.nombre = nombre;
-		this.descripcion = descripcion;
+		this.examen = examen;
+		this.consulta = consulta;
 	}
 
-	public Integer getIdExamen() {
-		return idExamen;
+	public Examen getExamen() {
+		return examen;
 	}
-	public void setIdExamen(Integer idExamen) {
-		this.idExamen = idExamen;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setExamen(Examen examen) {
+		this.examen = examen;
 	}
 
-	public String getDescripcion() {
-		return descripcion;
+	public Consulta getConsulta() {
+		return consulta;
 	}
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+	public void setConsulta(Consulta consulta) {
+		this.consulta = consulta;
 	}
-	
-	
+
+
 		
-	
 }
