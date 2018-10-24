@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mitocode.model.Consulta;
 import com.mitocode.service.IConsultaService;
+import com.mitocode.util.ConsultaListaExamen;
 
 @RestController
 @RequestMapping("/consulta")
@@ -57,5 +58,23 @@ public class ConsultaController {
 		
 		return new ResponseEntity<Consulta>(resConsulta, HttpStatus.OK);
 	}
+	
+	
+	@PostMapping(value = "/registrarDTO", consumes = MediaType.APPLICATION_JSON_VALUE, produces= MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Consulta> registrarDTO(@RequestBody ConsultaListaExamen dto){
+		/**
+		@RequestBody: indicar que la clase Persona sera de typo JSON
+		*/
+		
+		Consulta resConsulta = new Consulta(); 
 
+		try {
+			resConsulta =service.registrarDTO(dto);
+			
+		} catch (Exception e) {
+			new ResponseEntity<>(resConsulta, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return new ResponseEntity<Consulta>(resConsulta, HttpStatus.OK);
+	}
 }

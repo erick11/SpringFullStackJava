@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mitocode.dao.IConsultaDao;
+import com.mitocode.dao.IConsultaExamenDao;
 import com.mitocode.model.Consulta;
 import com.mitocode.model.DetalleConsulta;
 import com.mitocode.service.IConsultaService;
+import com.mitocode.util.ConsultaListaExamen;
 
 
 @Service
@@ -20,6 +22,9 @@ public class ConsultaServiceImpl implements IConsultaService{
 	@Autowired
 	private IConsultaDao dao;
 
+	@Autowired
+	private IConsultaExamenDao ceDao;
+	
 	@Override
 	public Consulta registrar(Consulta consulta) {				
 		
@@ -31,6 +36,21 @@ public class ConsultaServiceImpl implements IConsultaService{
 		
 		
 		return dao.save(consulta);
+	}
+	
+	@Override
+	public Consulta registrarDTO(ConsultaListaExamen dto) {
+		
+		Consulta consulta = new Consulta();
+		try {
+			//Primero inserto la consulta
+			dao.save(dto.getConsulta());
+			dto.getExamenes().forEach(examen -> ceDao.registrar(dto.getConsulta().getIdConsulta(), examen.getIdExamen()));
+			
+		} catch (Exception e) {
+
+		}
+		return consulta;
 	}
 
 	@Override
@@ -52,5 +72,11 @@ public class ConsultaServiceImpl implements IConsultaService{
 	public Consulta listar(Integer cod) {
 		return dao.findById(cod).get();
 	}
+
+
+
+
+	
+	
 		
 }

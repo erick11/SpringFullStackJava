@@ -1,5 +1,7 @@
 package com.mitocode.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -8,7 +10,9 @@ import javax.persistence.ManyToOne;
 @Embeddable: 
 */
 @Embeddable
-public class ConsultaExamenPK {
+public class ConsultaExamenPK implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 
 	@ManyToOne
 	@JoinColumn(name= "idExamen", nullable= false)
