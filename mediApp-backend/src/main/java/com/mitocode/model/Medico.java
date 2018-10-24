@@ -2,12 +2,15 @@ package com.mitocode.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.mitocode.model.listener.MedicoListener;
 
+@EntityListeners(MedicoListener.class)
 @Entity
 @Table(name="tb_Medico")
 public class Medico {
@@ -65,7 +68,6 @@ public class Medico {
 		this.cmp = cmp;
 	}
 
-	
 	@Override
 	public String toString() {
 		return "Medico [idMedico=" + idMedico + ", nombres=" + nombres + ", apellidos=" + apellidos + ", cmp=" + cmp
@@ -82,7 +84,6 @@ public class Medico {
 		result = prime * result + ((nombres == null) ? 0 : nombres.hashCode());
 		return result;
 	}
-	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -114,10 +115,5 @@ public class Medico {
 			return false;
 		return true;
 	}
-	
-	
-	
-	
-	
 	
 }
