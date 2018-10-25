@@ -33,8 +33,6 @@ public class ConsultaServiceImpl implements IConsultaService{
 //		} 		
 		
 		consulta.getDetalleConsultas().forEach(x->{x.setConsulta(consulta);});
-		
-		
 		return dao.save(consulta);
 	}
 	
@@ -48,7 +46,7 @@ public class ConsultaServiceImpl implements IConsultaService{
 			dto.getExamenes().forEach(examen -> ceDao.registrar(dto.getConsulta().getIdConsulta(), examen.getIdExamen()));
 			
 		} catch (Exception e) {
-
+			e.printStackTrace();
 		}
 		return consulta;
 	}

@@ -113,6 +113,61 @@ public class Consulta {
 		return "Consulta [idConsulta=" + idConsulta + ", fecha=" + fecha + ", paciente=" + paciente + ", especialidad="
 				+ especialidad + ", medico=" + medico + ", detalleConsultas=" + detalleConsultas + "]";
 	}
-		
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((detalleConsultas == null) ? 0 : detalleConsultas.hashCode());
+		result = prime * result + ((especialidad == null) ? 0 : especialidad.hashCode());
+		result = prime * result + ((fecha == null) ? 0 : fecha.hashCode());
+		result = prime * result + ((idConsulta == null) ? 0 : idConsulta.hashCode());
+		result = prime * result + ((medico == null) ? 0 : medico.hashCode());
+		result = prime * result + ((paciente == null) ? 0 : paciente.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Consulta other = (Consulta) obj;
+		if (detalleConsultas == null) {
+			if (other.detalleConsultas != null)
+				return false;
+		} else if (!detalleConsultas.equals(other.detalleConsultas))
+			return false;
+		if (especialidad == null) {
+			if (other.especialidad != null)
+				return false;
+		} else if (!especialidad.equals(other.especialidad))
+			return false;
+		if (fecha == null) {
+			if (other.fecha != null)
+				return false;
+		} else if (!fecha.equals(other.fecha))
+			return false;
+		if (idConsulta == null) {
+			if (other.idConsulta != null)
+				return false;
+		} else if (!idConsulta.equals(other.idConsulta))
+			return false;
+		if (medico == null) {
+			if (other.medico != null)
+				return false;
+		} else if (!medico.equals(other.medico))
+			return false;
+		if (paciente == null) {
+			if (other.paciente != null)
+				return false;
+		} else if (!paciente.equals(other.paciente))
+			return false;
+		return true;
+	}
+
 }
 
