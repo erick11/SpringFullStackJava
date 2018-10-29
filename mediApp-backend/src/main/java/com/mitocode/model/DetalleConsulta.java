@@ -76,9 +76,13 @@ public class DetalleConsulta {
 		this.tratamiento = tratamiento;
 	}
 
+	/**
+	Debe evitar poner  la clase que donde se llaman las lista. En este caso es 
+	Consulta
+	*/
 	@Override
 	public String toString() {
-		return "DetalleConsulta [idDetalleConsulta=" + idDetalleConsulta + ", consulta=" + consulta + ", diagnostico="
+		return "DetalleConsulta [idDetalleConsulta=" + idDetalleConsulta +  ", diagnostico="
 				+ diagnostico + ", tratamiento=" + tratamiento + "]";
 	}
 

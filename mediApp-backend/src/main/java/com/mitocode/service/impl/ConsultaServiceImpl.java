@@ -35,7 +35,7 @@ public class ConsultaServiceImpl implements IConsultaService{
 		Consulta resConsulta = new Consulta();
 		
 		try {
-		
+						
 			consulta.getDetalleConsultas().forEach(x->{x.setConsulta(consulta);});
 			resConsulta = dao.save(consulta);
 			
