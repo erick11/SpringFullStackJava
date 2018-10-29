@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.bemainick.model.Venta;
 
 @Repository
-public interface IVenta extends JpaRepository<Venta, Integer>{
+public interface IVentaDao extends JpaRepository<Venta, Integer>{
 
 	
 }
