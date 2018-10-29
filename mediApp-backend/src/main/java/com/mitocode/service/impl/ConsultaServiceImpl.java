@@ -53,6 +53,7 @@ public class ConsultaServiceImpl implements IConsultaService{
 		Consulta consulta = new Consulta();
 		try {
 			//Primero inserto la consulta
+			dto.getConsulta().getDetalleConsultas().forEach(x->{x.setConsulta(dto.getConsulta());});
 			dao.save(dto.getConsulta());
 			dto.getExamenes().forEach(examen -> ceDao.registrar(dto.getConsulta().getIdConsulta(), examen.getIdExamen()));
 			
