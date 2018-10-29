@@ -32,8 +32,19 @@ public class ConsultaServiceImpl implements IConsultaService{
 //			det.setConsulta(consulta);
 //		} 		
 		
-		consulta.getDetalleConsultas().forEach(x->{x.setConsulta(consulta);});
-		return dao.save(consulta);
+		Consulta resConsulta = new Consulta();
+		
+		try {
+		
+			consulta.getDetalleConsultas().forEach(x->{x.setConsulta(consulta);});
+			resConsulta = dao.save(consulta);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return resConsulta;
 	}
 	
 	@Override
