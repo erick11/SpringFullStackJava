@@ -106,7 +106,6 @@ public class Consulta {
 	public void setDetalleConsultas(List<DetalleConsulta> detalleConsultas) {
 		this.detalleConsultas = detalleConsultas;
 	}
-
 	
 	@Override
 	public String toString() {
