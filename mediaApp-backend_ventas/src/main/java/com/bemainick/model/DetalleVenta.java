@@ -25,6 +25,12 @@ public class DetalleVenta {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Integer idDetalleVenta;
 	
+	@OneToMany(mappedBy= "detalleVenta")
+	private List<Producto> productos;
+	
+	@Column(name="cmp", nullable= false)
+	private Integer cantidad;
+	
 	/**
 	@JsonIgnore: Es para evitar la redundancia ciclica
 	*/
@@ -33,11 +39,6 @@ public class DetalleVenta {
 	@JoinColumn(name= "id_venta", nullable = false)
 	private Venta venta;
 	
-	@OneToMany(mappedBy= "detalleVenta")
-	private List<Producto> productos;
-	
-	@Column(name="cmp", nullable= false)
-	private Integer cantidad;
 	
 	public DetalleVenta() {
 		
@@ -86,8 +87,8 @@ public class DetalleVenta {
 
 	@Override
 	public String toString() {
-		return "DetalleVenta [idDetalleVenta=" + idDetalleVenta + ", venta=" + venta + ", productos=" + productos
-				+ ", cantidad=" + cantidad + "]";
+		return "DetalleVenta [idDetalleVenta=" + idDetalleVenta + ", productos=" + productos + ", cantidad=" + cantidad
+				+ "]";
 	}
 	
 }

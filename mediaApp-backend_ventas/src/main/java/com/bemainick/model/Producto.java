@@ -42,36 +42,28 @@ public class Producto {
 		this.nombre = nombre;
 		this.marca = marca;
 	}
-
 	
 	public Integer getIdProducto() {
 		return idProducto;
 	}
-
 	public void setIdProducto(Integer idProducto) {
 		this.idProducto = idProducto;
 	}
-
 	
 	public String getNombre() {
 		return nombre;
 	}
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-	
-
 	public String getMarca() {
 		return marca;
 	}
-
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
 
-	
 	@Override
 	public String toString() {
 		return "Producto [idProducto=" + idProducto + ", nombre=" + nombre + ", marca=" + marca + "]";

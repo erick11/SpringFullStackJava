@@ -78,15 +78,20 @@ public class Venta {
 		this.fecha = fecha;
 	}
 	
-	/**
 	public Persona getPersona() {
 		return persona;
 	}
 	public void setPersona(Persona persona) {
 		this.persona = persona;
 	}
-	*/
-	
+
+	public List<DetalleVenta> getDetalleVentas() {
+		return detalleVentas;
+	}
+	public void setDetalleVentas(List<DetalleVenta> detalleVentas) {
+		this.detalleVentas = detalleVentas;
+	}
+
 	public double getImporte() {
 		return importe;
 	}
@@ -97,7 +102,8 @@ public class Venta {
 	
 	@Override
 	public String toString() {
-		return "Venta [idVenta=" + idVenta + ", fecha=" + fecha + ", persona=" + persona + ", importe=" + importe + "]";
+		return "Venta [idVenta=" + idVenta + ", fecha=" + fecha + ", persona=" + persona + ", importe=" + importe
+				+ ", detalleVentas=" + detalleVentas + "]";
 	}
 
 }
