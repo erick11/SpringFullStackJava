@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.mitocode.dao.IConsultaDao;
 import com.mitocode.dao.IConsultaExamenDao;
@@ -47,6 +48,17 @@ public class ConsultaServiceImpl implements IConsultaService{
 		return resConsulta;
 	}
 	
+	/**
+	 @Transactional= Se debe implementar en la capa servicios para todo el metodo se comporte 
+	 de forma transaccional; Ya que, sucede un error se haga rollback 
+	 - Si desas que todos tus metodos sean transaccionales pones la anotacion a nivel de clase
+	   Ejm.
+	   @Transactional
+	   @Service
+		public class ConsultaServiceImpl implements IConsultaService{
+    
+	*/
+	@Transactional
 	@Override
 	public Consulta registrarDTO(ConsultaListaExamen dto) {
 		

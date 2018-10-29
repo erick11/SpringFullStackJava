@@ -19,7 +19,7 @@ public interface IConsultaExamenDao extends JpaRepository<ConsultaExamen, Intege
 	 @Transactional = Se utilza para indicar que se debe hacer un commit; ya que, es un query nativo
 	*/
 	
-	@Transactional
+	//@Transactional
 	@Modifying
 	@Query(value = "INSERT INTO tb_consulta_examen(id_consulta, id_examen) VALUES (:idConsulta, :idExamen)", nativeQuery = true)
 	int registrar(@Param("idConsulta")Integer idConsulta, @Param("idExamen")Integer idExamen);
